@@ -1,6 +1,52 @@
-body{
+html{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-size: 62.5%;
+}
+
+:root{
     background-color: #2e5266;
     font-family: 'Quicksand', sans-serif;
     color: #cee5f2;
+    --first-color: #cee5f2;
+    --second-color: #accbe1;
 }
 
+.container{
+    display: grid;
+    width: 100%;
+    height: 100vh;
+    grid-template-areas: 
+        "header header header"
+        "main main main";
+        "footer footer aside";
+}
+
+.head-l-elements{
+    grid-area: header;
+   font-size: medium;
+   text-align: left;
+   var(--first-color, #cee5f3);
+}
+
+.head-r-elements{
+    grid-area: header;
+    inset-inline-end: right;
+    font-size: small;
+    text-align: right;
+    var(--first-color);
+}
+
+.main-elemnts{
+    grid-area: main;
+}
+
+.footer-elements{
+    grid-area: footer;
+}
+
+.aside-elements{
+    grid-area: aside;
+}
