@@ -10,43 +10,62 @@ html{
     background-color: #2e5266;
     font-family: 'Quicksand', sans-serif;
     color: #cee5f2;
-    --first-color: #cee5f2;
-    --second-color: #accbe1;
 }
 
 .container{
     display: grid;
     width: 100%;
     height: 100vh;
-    grid-template-areas: 
-        "header header header"
-        "main main main";
+    grid-template-areas:
+        "h1 h1 header" 
+        "div main aside"
         "footer footer aside";
+    grid-template-columns: 40% 40% 20%;
+    grid-template-rows: 15% 75% 10%;    
 }
 
-.head-l-elements{
-    grid-area: header;
-   font-size: medium;
-   text-align: left;
-   var(--first-color, #cee5f3);
+.h1{
+    grid-area: h1;
+    grid-column: 1 / 3;
+    grid-row: 1;
+    font-size: medium;
+    color: #accbe1;
+    text-align: left;
+    padding: 10%;
+    border: 25%;
 }
 
-.head-r-elements{
+.header-elements{
     grid-area: header;
-    inset-inline-end: right;
-    font-size: small;
+    grid-column: 3;
+    grid-row: 1;
+    font-size: smaller;
+    color: #accbe1;
     text-align: right;
-    var(--first-color);
+    padding: 10%;
+    border: 25%;
 }
 
-.main-elemnts{
+.div-elements{
+    grid-area: div;
+    grid-column: 1 / 2;
+    grid-row: 2;
+}
+
+.main-elements{
     grid-area: main;
-}
-
-.footer-elements{
-    grid-area: footer;
+    grid-column: 2 / 3;
+    grid-row: 2;
 }
 
 .aside-elements{
     grid-area: aside;
+    grid-column: 3;
+    grid-row: 2 / 3;
+}
+
+.footer-elements{
+    grid-area: footer;
+    grid-column: 1 / 2;
+    grid-row: 3;
 }
