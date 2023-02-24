@@ -17,38 +17,59 @@ html{
     width: 100%;
     height: 100vh;
     grid-template-areas:
-        "h1 h1 header" 
-        "div main aside"
+        "header menu menu" 
+        "div main main"
         "footer footer aside";
     grid-template-columns: 40% 40% 20%;
     grid-template-rows: 15% 75% 10%;
     grid-gap: 15px;   
-    justify-content: center; 
-    align-content: center;
-}
-
-.h1-elements{
-    grid-area: h1;
-    grid-column: 1 / 3;
-    grid-row: 1;
-    font-size: medium;
-    color: #accbe1;
-    text-align: left;
-    padding: 20px;
 }
 
 .header-elements{
     grid-area: header;
-    grid-column: 3;
+    grid-column: 1;
     grid-row: 1;
-    font-size: smaller;
-    color: #accbe1;
-    text-align: right;
-    padding: 10%;
+    padding: 3%;
+    border: 0;
+}
+
+h1{
+    display: inline;
+    text-align: left;
+    font-size: medium;
+    color: #CCCCFF;
+    padding: 15%;
     border: 25%;
 }
 
-.div-elements{
+.menu-elements{
+    grid-area: menu;
+    grid-column: 2 3;
+    grid-row: 1;
+} 
+
+ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    width: 80%;
+    height: 15%;
+}
+
+li{
+    float: right;
+}
+
+li a{
+    display: inline;
+    color: #CCCCFF;
+    font-size: medium;
+    text-align: center;
+    padding: 14px 25px;
+    text-decoration: none;
+}
+
+.photo-elements{
     grid-area: div;
     grid-column: 1 / 2;
     grid-row: 2;
@@ -58,41 +79,45 @@ html{
 .div-img{
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    
+    object-fit:contain;    
 }
+
 .main-elements{
     grid-area: main;
     grid-column: 2 / 3;
     grid-row: 2;
     font-size: 3.5vh;
     text-align: justify;
+    justify-content: center;
     object-fit: cover;
     color: #ccc0ef;
 }
 
-.aside-elements{
-    grid-area: aside;
-    grid-column: 3;
-    grid-row: 2 / 3;
-}
-
-.menu-nav{
-    background-color: #2e5266;
-    border: none;
-    color: #2e5266;
-    padding: 15px 20px 10px 20px;
-    text-align: center;
-    text-decoration: none;
-    display: block;
-    font-size: 16vh;
-}
 .footer-elements{
     grid-area: footer;
     grid-column: 1 / 3;
     grid-row: 3;
-    display: inline;
+    padding: 0;
+    position: fixed;
+    bottom: 50px;
+    top: auto;
+    left: 50px;
+    right: 50px;
+    height: 1px;
 }
+
+.contact{
+    display: none;
+    text-align: left;
+    grid-area: footer;
+    grid-column: 1 / 2;
+    grid-row: 3;
+    text-align: left;
+    font-size: smaller;
+    color: #ffd5e3;
+    
+}
+
 
 img{
     display: inline;
